@@ -1,2 +1,15 @@
 # Hello-Git
 testing Git
+
+
+
+    link: function($scope, $element, $attr) {
+      $timeout(function checkTime() {
+        if($scope.localtz) {
+          $scope.currentTime = $filter('date')(+(new Date), 'h:mm') + $scope.localtz;
+        }
+        $timeout(checkTime, 500);
+      });
+    }
+  }
+ })
